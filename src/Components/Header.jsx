@@ -11,8 +11,8 @@ export default function Header() {
     >
       <div className="justify-between px-4 lg:flex lg:items-center lg:px-8 xl:items-center xl:flex xl:px-8 2xl:items-center 2xl:flex 2xl:px-8">
         <div className="flex items-center justify-between">
-          <a href="#footer">
-            <img src="/logo.svg" alt="Logo" />
+          <a className="py-4" href="#footer">
+            <img className="w-80" src="/logo.png" alt="Logo" />
           </a>
           <div className="lg:hidden xl:hidden 2xl:hidden">
             <button

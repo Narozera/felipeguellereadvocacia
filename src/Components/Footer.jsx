@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
           <div className="my-auto sm:mx-auto md:mx-auto">
             <a href="#nav">
-              <img src="/logo.svg" alt="Logo" />
+              <img src="/logo.png" alt="Logo" />
             </a>
           </div>
 
