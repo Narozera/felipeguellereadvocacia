@@ -1,14 +1,6 @@
 function Maps() {
   return (
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.8403771173566!2d-46.571858000000006!3d-23.5382429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ee85455469f%3A0x16b39b084be6f2c7!2zUHJhw6dhIFDDoWR1YSBEaWFzLCAxMDggLSBUYXR1YXDDqSwgU8OjbyBQYXVsbyAtIFNQLCAwMzA2Ny0wNTA!5e0!3m2!1spt-BR!2sbr!4v1680034088092!5m2!1spt-BR!2sbr"
-      width="100%"
-      title="Felipe Guellere"
-      height="600px"
-      style={{ borderRadius: 20 }}
-      allowFullScreen=""
-      aria-hidden="false"
-    />
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9000.029554174303!2d-46.6569829!3d-23.5628808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c92a60815d%3A0xaecf8af8aacbd86!2sAv.%20Paulista%2C%201471%20-%20CJ%201110%20-%20Jardim%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001311-200!5e1!3m2!1spt-BR!2sbr!4v1767992333613!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   );
 }
 

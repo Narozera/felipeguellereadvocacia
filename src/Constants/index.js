@@ -154,7 +154,7 @@ export const footerText = [
 
   {
     id: 4,
-    text: "Praça Pádua Dias, 108",
+    text: "Av. Paulista, 1471, Conjunto 1110",
     icon: location,
     alt: "Localização",
     href: "https://www.google.com/maps/place/Praça+Pádua+Dias,+108+-+Tatuapé,+São+Paulo+-+SP,+03067-050/@-23.537782,-46.57076,17z/data=!4m6!3m5!1s0x94ce5ee85455469f:0x16b39b084be6f2c7!8m2!3d-23.5382429!4d-46.571858!16s%2Fg%2F11fjxywn1j?hl=pt-BR",

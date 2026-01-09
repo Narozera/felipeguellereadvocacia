@@ -2,7 +2,7 @@ import { footerIcons, footerText, footerTitle } from "../Constants";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#00293F] font-roboto" id="footer">
+    <footer className="w-full py-5 bg-[#00293F] font-roboto" id="footer">
       <div className="container mx-auto">
         <div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
           <div className="my-auto sm:mx-auto md:mx-auto">
