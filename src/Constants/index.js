@@ -138,10 +138,10 @@ export const footerText = [
 
   {
     id: 2,
-    text: "contato@felipeguellereadvocacia.com.br",
+    text: "felipeguellere@hotmail.com",
     icon: email,
     alt: "Email",
-    href: "mailto:contato@felipeguellereadvocacia.com.br?subject=&body=",
+    href: "mailto:felipeguellere@hotmail.com.?subject=&body=",
   },
 
   {

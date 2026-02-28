@@ -20,7 +20,7 @@ export default function About() {
           <div className="mx-auto lg:my-auto">
             <motion.img
               className="sm:rounded-full md:rounded-full lg:rounded-full"
-              src="/guellas.png"
+              src="/guellas.jpg"
               alt="Felipe Guellere"
               variants={textVariant(1)}
             />
