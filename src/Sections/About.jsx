@@ -16,17 +16,19 @@ export default function About() {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1  pt-[30px]">
-          <div className="mx-auto lg:my-auto">
-            <motion.img
+        <div className="flex flex-wrap items-center justify-center pb-10">
+
+          
+        
+            
+            {/* <motion.img
               className="sm:rounded-full md:rounded-full lg:rounded-full"
               src="/guellas.jpg"
               alt="Felipe Guellere"
               variants={textVariant(1)}
-            />
-          </div>
-
-          <div className="mx-auto">
+            /> */}
+     
+    <div >
             <ul className="text-[white] text-[20px] list-disc py-10 max-w-[465px] sm:w-[315px] sm:text-[18px] sm:list-none sm:text-center md:list-none md:text-[18px] md:w-[380px] md:text-center lg:w-[370px]">
               <motion.li className="mb-5" variants={textVariant(0.6)}>
                 {about[0]}
