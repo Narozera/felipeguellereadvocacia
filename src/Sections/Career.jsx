@@ -4,15 +4,18 @@ import { textVariant } from "../utils/motion";
 
 export default function Career() {
   return (
-    <section className="w-full bg-navy font-times px-6 pb-24" id="career">
+    <section
+      className="w-full bg-gradient-to-br from-navy-800 via-navy-700 to-navy-600 font-times px-6 py-24 sm:py-16 md:py-16"
+      id="career"
+    >
       <motion.div
-        className="container mx-auto bg-navy-light rounded-[20px] p-12 text-white sm:p-6 md:p-6"
+        className="container mx-auto text-white"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
       >
         <motion.p
-          className="uppercase tracking-[0.2em] text-[14px] text-white/70"
+          className="uppercase tracking-[0.2em] text-[14px] text-navy-200"
           variants={textVariant(0.2)}
         >
           {career.tag}
@@ -24,22 +27,26 @@ export default function Career() {
           {career.title}
         </motion.h2>
 
-        <ol className="mt-10 border-l border-white/25 ml-2">
+        <ol className="mt-10 border-l border-navy-400 ml-2">
           {career.items.map((job, index) => (
             <motion.li
               key={job.id}
               className="relative pl-8 pb-10 last:pb-0"
               variants={textVariant(0.3 + index * 0.1)}
             >
-              <span className="absolute -left-[7px] top-2 h-[13px] w-[13px] rounded-full bg-white" />
-              <p className="font-light text-[16px] text-white/70">
+              <span
+                className={`absolute -left-[7px] top-2 h-[13px] w-[13px] rounded-full ${
+                  index === 0 ? "bg-white" : "bg-navy-300"
+                }`}
+              />
+              <p className="font-light text-[16px] text-navy-200">
                 {job.period}
               </p>
               <h3 className="font-bold text-[22px]">
                 {job.role}{" "}
-                <span className="font-normal text-white/80">· {job.place}</span>
+                <span className="font-normal text-navy-200">· {job.place}</span>
               </h3>
-              <p className="text-[17px] leading-relaxed text-white/85 mt-2 max-w-[900px]">
+              <p className="text-[17px] leading-relaxed text-navy-100 mt-2 max-w-[900px]">
                 {job.text}
               </p>
             </motion.li>

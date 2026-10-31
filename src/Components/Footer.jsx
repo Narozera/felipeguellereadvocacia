@@ -3,7 +3,7 @@ import { footerIcons, footerText, footerTitle } from "../Constants";
 export default function Footer() {
   return (
     <footer
-      className="w-full py-10 px-6 bg-navy border-t border-white/10 font-times"
+      className="w-full py-10 px-6 bg-navy-900 font-times"
       id="footer"
     >
       <div className="container mx-auto grid grid-cols-3 gap-10 items-center lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:text-center md:text-center sm:text-center">
@@ -25,7 +25,7 @@ export default function Footer() {
               {item.href ? (
                 <a
                   href={item.href}
-                  className="hover:text-[#c9d6df] ease-linear transition-all duration-150"
+                  className="hover:text-navy-200 ease-linear transition-all duration-150"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="text-center text-white/60 font-light text-[14px] mt-10">
+      <p className="text-center text-navy-300 font-light text-[14px] mt-10">
         © {new Date().getFullYear()} Guellere Sociedade de Advogados
       </p>
     </footer>

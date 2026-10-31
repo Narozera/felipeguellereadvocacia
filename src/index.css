@@ -13,7 +13,7 @@ body,
 html {
   scroll-behavior: smooth;
   font-family: "Times New Roman", Times, serif;
-  background: #00293f;
+  background: #001a29;
 }
 
 section[id] {
@@ -24,10 +24,10 @@ body::-webkit-scrollbar {
   width: 12px;
 }
 body::-webkit-scrollbar-track {
-  background: #171614;
+  background: #001a29;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: #c9d6df;
   border-radius: 20px;
-  border: 3px solid #171614;
+  border: 3px solid #001a29;
 }

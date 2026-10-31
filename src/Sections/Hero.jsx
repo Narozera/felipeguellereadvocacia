@@ -4,7 +4,7 @@ import { textVariant } from "../utils/motion";
 
 export default function Hero() {
   return (
-    <section id="hero" className="bg-navy font-times px-6 py-24 sm:py-14 md:py-14">
+    <section id="hero" className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-600 font-times px-6 py-24 sm:py-14 md:py-14">
       <motion.div
         className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 sm:gap-10 md:gap-10 lg:gap-10"
         initial="hidden"
@@ -13,7 +13,7 @@ export default function Hero() {
       >
         <div className="text-white">
           <motion.p
-            className="uppercase tracking-[0.2em] text-[14px] text-white/70 mb-5"
+            className="uppercase tracking-[0.2em] text-[14px] text-navy-200 mb-5"
             variants={textVariant(0.2)}
           >
             {hero.tag}
@@ -38,7 +38,7 @@ export default function Hero() {
               href={hero.buttonHref}
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-navy font-bold text-[18px] px-8 py-3 rounded-full hover:bg-[#c9d6df] ease-linear transition-all duration-150"
+              className="bg-white text-navy font-bold text-[18px] px-8 py-3 rounded-full hover:bg-navy-200 ease-linear transition-all duration-150"
             >
               {hero.button}
             </a>
@@ -55,7 +55,7 @@ export default function Hero() {
           {hero.highlights.map((item, index) => (
             <motion.li
               key={item.id}
-              className="bg-navy-light border border-white/10 rounded-[20px] p-6 text-white shadow-lg shadow-black/30"
+              className="bg-white/10 backdrop-blur border border-white/15 rounded-[20px] p-6 text-white shadow-lg shadow-navy-900/40"
               variants={textVariant(0.6 + index * 0.2)}
             >
               <h2 className="font-bold text-[22px]">{item.title}</h2>

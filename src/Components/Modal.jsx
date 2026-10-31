@@ -54,7 +54,7 @@ export default function Modal({ area, onClose }) {
 
           <div className="p-6 border-t border-white/20">
             <button
-              className="w-full rounded-full bg-white text-navy font-bold uppercase py-3 hover:bg-[#c9d6df] ease-linear transition-all duration-150"
+              className="w-full rounded-full bg-white text-navy font-bold uppercase py-3 hover:bg-navy-200 ease-linear transition-all duration-150"
               type="button"
               onClick={onClose}
             >
@@ -63,7 +63,7 @@ export default function Modal({ area, onClose }) {
           </div>
         </div>
       </motion.div>
-      <div className="fixed inset-0 z-40 bg-black/60" />
+      <div className="fixed inset-0 z-40 bg-navy-900/70" />
     </>
   );
 }

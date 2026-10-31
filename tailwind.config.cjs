@@ -6,10 +6,23 @@ module.exports = {
       fontFamily: {
         times: ['"Times New Roman"', "Times", "serif"],
       },
+      // Paleta: azul da marca (#00293F) mesclado com o branco
       colors: {
-        navy: "#00293F",
-        "navy-light": "#013754",
-        "navy-soft": "#1F4E68",
+        navy: {
+          DEFAULT: "#00293F",
+          light: "#013754",
+          soft: "#1F4E68",
+          50: "#F4F7F9",
+          100: "#E6EDF1",
+          200: "#C9D6DF",
+          300: "#9FB4C2",
+          400: "#6B8BA0",
+          500: "#3F6680",
+          600: "#1F4E68",
+          700: "#013754",
+          800: "#00293F",
+          900: "#001A29",
+        },
       },
     },
     screens: {

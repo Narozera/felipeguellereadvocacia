@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <nav
-      className="w-full bg-navy sticky top-0 z-30 border-b border-white/10 font-times"
+      className="w-full bg-navy-900/95 backdrop-blur sticky top-0 z-30 border-b border-navy-700 font-times"
       id="nav"
     >
       <div className="container mx-auto px-6 flex items-center justify-between sm:flex-wrap md:flex-wrap">
@@ -60,7 +60,7 @@ export default function Header() {
               <a
                 href={item.href}
                 onClick={() => setNavbar(false)}
-                className="text-white hover:text-[#c9d6df] ease-linear transition-all duration-150"
+                className="text-white hover:text-navy-200 ease-linear transition-all duration-150"
               >
                 {item.text}
               </a>

@@ -4,16 +4,16 @@ import { textVariant } from "../utils/motion";
 
 export default function About() {
   return (
-    <section className="w-full bg-navy font-times px-6 pb-24" id="about">
+    <section className="w-full bg-white font-times px-6 py-24 sm:py-16 md:py-16" id="about">
       <motion.div
-        className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 text-white lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:gap-10 md:gap-10 sm:gap-10"
+        className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 text-navy lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:gap-10 md:gap-10 sm:gap-10"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
       >
         <div>
           <motion.p
-            className="uppercase tracking-[0.2em] text-[14px] text-white/70"
+            className="uppercase tracking-[0.2em] text-[14px] text-navy-500"
             variants={textVariant(0.2)}
           >
             {about.tag}
@@ -25,7 +25,7 @@ export default function About() {
             {about.name}
           </motion.h2>
           <motion.p
-            className="text-[20px] text-white/70 italic"
+            className="text-[20px] text-navy-500 italic"
             variants={textVariant(0.3)}
           >
             {about.role}
@@ -35,7 +35,7 @@ export default function About() {
             {about.paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
-                className="text-[19px] leading-relaxed text-white/90"
+                className="text-[19px] leading-relaxed text-navy-700"
                 variants={textVariant(0.4 + index * 0.1)}
               >
                 {paragraph}
@@ -50,17 +50,17 @@ export default function About() {
             {about.stats.map((stat) => (
               <li
                 key={stat.id}
-                className="bg-navy-light rounded-[20px] p-5 border border-white/10 text-center"
+                className="bg-navy-50 rounded-[20px] p-5 border border-navy-200 text-center"
               >
-                <p className="font-bold text-[32px]">{stat.value}</p>
-                <p className="text-[16px] text-white/75">{stat.label}</p>
+                <p className="font-bold text-[32px] text-navy">{stat.value}</p>
+                <p className="text-[16px] text-navy-500">{stat.label}</p>
               </li>
             ))}
           </motion.ul>
         </div>
 
         <motion.aside
-          className="bg-navy-light rounded-[20px] p-8 border border-white/10 space-y-8 self-start sm:p-6 md:p-6"
+          className="bg-gradient-to-br from-navy-800 to-navy-600 text-white rounded-[20px] p-8 space-y-8 self-start shadow-xl shadow-navy-300/40 sm:p-6 md:p-6"
           variants={textVariant(0.5)}
         >
           <div>
@@ -69,7 +69,7 @@ export default function About() {
               {about.education.map((course) => (
                 <li key={course.id}>
                   <p className="font-bold text-[18px]">{course.title}</p>
-                  <p className="font-light text-[16px] text-white/75">
+                  <p className="font-light text-[16px] text-navy-200">
                     {course.place} · {course.period}
                   </p>
                 </li>
@@ -83,7 +83,7 @@ export default function About() {
               {about.skills.map((skill) => (
                 <li
                   key={skill}
-                  className="border border-white/30 rounded-full px-4 py-1 text-[16px]"
+                  className="bg-white/10 border border-navy-300/50 rounded-full px-4 py-1 text-[16px]"
                 >
                   {skill}
                 </li>
