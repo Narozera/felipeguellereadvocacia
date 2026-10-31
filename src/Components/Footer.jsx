@@ -2,58 +2,57 @@ import { footerIcons, footerText, footerTitle } from "../Constants";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-5 bg-[#00293F] font-roboto" id="footer">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
-          <div className="my-auto sm:mx-auto md:mx-auto">
-            <a href="#nav">
-              <img src="/logo.png" alt="Logo" />
-            </a>
-          </div>
+    <footer
+      className="w-full py-10 px-6 bg-navy border-t border-white/10 font-times"
+      id="footer"
+    >
+      <div className="container mx-auto grid grid-cols-3 gap-10 items-center lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:text-center md:text-center sm:text-center">
+        <a href="#hero">
+          <img
+            className="w-72 lg:mx-auto md:mx-auto sm:mx-auto"
+            src="/logo.png"
+            alt="Felipe Guellere Advocacia"
+          />
+        </a>
 
-          <div className="mx-auto my-auto sm:pb-5 md:pb-5">
-            <ul>
-              {footerText.map((item) => (
-                <li
-                  key={item.id}
-                  className="my-[22px] text-[white] font-bold flex sm:justify-center md:justify-center"
+        <ul className="space-y-3 mx-auto">
+          {footerText.map((item) => (
+            <li
+              key={item.id}
+              className="flex items-center gap-3 text-white font-light text-[16px] lg:justify-center md:justify-center sm:justify-center"
+            >
+              <img className="w-[22px]" src={item.icon} alt={item.alt} />
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className="hover:text-[#c9d6df] ease-linear transition-all duration-150"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <img
-                    className="px-2 w-[40px]"
-                    src={item.icon}
-                    alt={item.alt}
-                  />
-
-                  <a
-                    href={item.href}
-                    className="hover:text-indigo-200 ease-linear transition-all duration-150"
-                    target="_blank"
-                  >
-                    {item.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mx-auto my-auto text-center">
-            <h3 className="pb-2 text-[20px] text-white font-bold">
-              {footerTitle[0]}
-            </h3>
-            <div className="flex">
-              {footerIcons.map((item) => (
-                <a key={item.id} href={item.href} target="_blank">
-                  <img
-                    className="px-2 sm:pb-5 md:pb-5"
-                    src={item.icon}
-                    alt={item.alt}
-                  />
+                  {item.text}
                 </a>
-              ))}
-            </div>
+              ) : (
+                <span>{item.text}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mx-auto text-center">
+          <h3 className="pb-3 text-[20px] text-white font-bold">{footerTitle}</h3>
+          <div className="flex justify-center gap-3">
+            {footerIcons.map((item) => (
+              <a key={item.id} href={item.href} target="_blank" rel="noreferrer">
+                <img className="w-[44px]" src={item.icon} alt={item.alt} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
+
+      <p className="text-center text-white/60 font-light text-[14px] mt-10">
+        © {new Date().getFullYear()} Guellere Sociedade de Advogados
+      </p>
     </footer>
   );
 }

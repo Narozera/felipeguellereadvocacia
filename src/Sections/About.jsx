@@ -1,94 +1,96 @@
 import { about } from "../Constants";
 import { motion } from "framer-motion";
-import { textVariant, container, item } from "../utils/motion";
-import { useState, useRef } from "react";
+import { textVariant } from "../utils/motion";
 
 export default function About() {
-  const [showModal, setShowModal] = useState(false);
-
-  const modal = useRef();
-
   return (
-    <section className="w-full bg-[#00293F] font-roboto" id="about">
+    <section className="w-full bg-navy font-times px-6 pb-24" id="about">
       <motion.div
-        className="container mx-auto"
+        className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 text-white lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:gap-10 md:gap-10 sm:gap-10"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.15 }}
       >
-        <div className="flex flex-wrap items-center justify-center pb-10">
+        <div>
+          <motion.p
+            className="uppercase tracking-[0.2em] text-[14px] text-white/70"
+            variants={textVariant(0.2)}
+          >
+            {about.tag}
+          </motion.p>
+          <motion.h2
+            className="font-bold text-[40px] mt-2 sm:text-[30px] md:text-[30px]"
+            variants={textVariant(0.3)}
+          >
+            {about.name}
+          </motion.h2>
+          <motion.p
+            className="text-[20px] text-white/70 italic"
+            variants={textVariant(0.3)}
+          >
+            {about.role}
+          </motion.p>
 
-          
-        
-            
-            {/* <motion.img
-              className="sm:rounded-full md:rounded-full lg:rounded-full"
-              src="/guellas.jpg"
-              alt="Felipe Guellere"
-              variants={textVariant(1)}
-            /> */}
-     
-    <div >
-            <ul className="text-[white] text-[20px] list-disc py-10 max-w-[465px] sm:w-[315px] sm:text-[18px] sm:list-none sm:text-center md:list-none md:text-[18px] md:w-[380px] md:text-center lg:w-[370px]">
-              <motion.li className="mb-5" variants={textVariant(0.6)}>
-                {about[0]}
-              </motion.li>
-              <motion.li variants={textVariant(0.8)}>{about[1]}</motion.li>
-            </ul>
-            <motion.button
-              className="w-[465px] bg-[white] h-[50px] text-[20px] font-bold 
-            
-            rounded-[20px] cursor-pointer hover:bg-[#cbcbcb] hover:text-[white] sm:w-[315px] md:w-[375px] lg:w-[370px] lg:mb-10 ease-linear transition-all duration-150"
-              onClick={() => setShowModal(true)}
-              variants={textVariant(0.8)}
-            >
-              {about[2]}
-            </motion.button>
+          <div className="space-y-5 mt-8">
+            {about.paragraphs.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                className="text-[19px] leading-relaxed text-white/90"
+                variants={textVariant(0.4 + index * 0.1)}
+              >
+                {paragraph}
+              </motion.p>
+            ))}
           </div>
-        </div>
-        {showModal ? (
-          <>
-            <motion.div
-              className="justify-center items-center flex modal-open-animation overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-              variants={container}
-              initial="hidden"
-              animate="visible"
-            >
-              <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                <div
-                  ref={modal}
-                  className="border-0 rounded-lg shadow-lg relative flex flex-col mx-[15px] bg-[#013754] text-white outline-none focus:outline-none"
-                >
-                  <motion.div
-                    className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t"
-                    variants={item}
-                  >
-                    <h3 className="text-3xl font-semibold">{about[2]}</h3>
-                  </motion.div>
 
-                  <motion.div
-                    className="relative p-6 flex flex-wrap"
-                    variants={item}
-                  >
-                    <div className="p-3 mx-auto">
-                      <p className="text-center">{about[3]}</p>
-                    </div>
-                  </motion.div>
-                  <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                    <button
-                      className="flex w-full justify-center shadow bg-white text-black hover:bg-[#cbcbcb] hover:text-[white] rounded-xl font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Fechar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black" />
-          </>
-        ) : null}
+          <motion.ul
+            className="grid grid-cols-3 gap-4 mt-10 sm:grid-cols-1"
+            variants={textVariant(0.7)}
+          >
+            {about.stats.map((stat) => (
+              <li
+                key={stat.id}
+                className="bg-navy-light rounded-[20px] p-5 border border-white/10 text-center"
+              >
+                <p className="font-bold text-[32px]">{stat.value}</p>
+                <p className="text-[16px] text-white/75">{stat.label}</p>
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+
+        <motion.aside
+          className="bg-navy-light rounded-[20px] p-8 border border-white/10 space-y-8 self-start sm:p-6 md:p-6"
+          variants={textVariant(0.5)}
+        >
+          <div>
+            <h3 className="font-bold text-[22px] mb-4">Formação acadêmica</h3>
+            <ul className="space-y-4">
+              {about.education.map((course) => (
+                <li key={course.id}>
+                  <p className="font-bold text-[18px]">{course.title}</p>
+                  <p className="font-light text-[16px] text-white/75">
+                    {course.place} · {course.period}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-[22px] mb-4">Competências</h3>
+            <ul className="flex flex-wrap gap-2">
+              {about.skills.map((skill) => (
+                <li
+                  key={skill}
+                  className="border border-white/30 rounded-full px-4 py-1 text-[16px]"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.aside>
       </motion.div>
     </section>
   );

@@ -1,20 +1,51 @@
 import Maps from "../Components/Maps";
-import Form from "../Components/Form";
+import { contact, footerText } from "../Constants";
 
 export default function Contact() {
   return (
-    <section
-      className="w-full bg-[#00293F] sm:py-5 md:py-5 font-roboto"
-      id="contact"
-    >
-      <div className="container mx-auto bg-[#FFFAFA] rounded-[20px]">
-        <div className="sm:grid-cols-1 md:grid-cols-1 grid grid-cols-2">
-          <div className="rounded-[20px]">
-            <Maps />
-          </div>
-          <div>
-            <Form />
-          </div>
+    <section className="w-full bg-navy font-times px-6 pb-24" id="contact">
+      <div className="container mx-auto grid grid-cols-2 gap-10 items-center text-white lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
+        <div>
+          <p className="uppercase tracking-[0.2em] text-[14px] text-white/70">
+            {contact.tag}
+          </p>
+          <h2 className="font-bold text-[36px] mt-2 sm:text-[28px] md:text-[28px]">
+            {contact.title}
+          </h2>
+          <p className="text-[19px] text-white/85 mt-4">{contact.text}</p>
+
+          <ul className="mt-8 space-y-4">
+            {footerText.map((item) => (
+              <li key={item.id} className="flex items-center gap-3 text-[18px]">
+                <img className="w-[26px]" src={item.icon} alt={item.alt} />
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-light hover:text-[#c9d6df] ease-linear transition-all duration-150"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <span className="font-light">{item.text}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={contact.buttonHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-10 bg-white text-navy font-bold text-[18px] px-8 py-3 rounded-full hover:bg-[#c9d6df] ease-linear transition-all duration-150"
+          >
+            {contact.button}
+          </a>
+        </div>
+
+        <div className="rounded-[20px] overflow-hidden">
+          <Maps />
         </div>
       </div>
     </section>

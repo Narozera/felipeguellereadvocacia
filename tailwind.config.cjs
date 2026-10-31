@@ -4,13 +4,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
-        nunito: ["Nunito", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        times: ['"Times New Roman"', "Times", "serif"],
       },
-      backgroundImage: {
-        hero: "url('/advogado.png')",
+      colors: {
+        navy: "#00293F",
+        "navy-light": "#013754",
+        "navy-soft": "#1F4E68",
       },
     },
     screens: {
