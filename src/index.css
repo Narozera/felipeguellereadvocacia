@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Espaçamentos padrão do site: toda seção, cartão e título usa estas classes */
+@layer components {
+  .section {
+    @apply w-full px-6 py-24 sm:py-16 md:py-16 font-times;
+  }
+
+  .section-grid {
+    @apply container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:gap-10 md:gap-10 sm:gap-10;
+  }
+
+  .card {
+    @apply rounded-[20px] p-10 sm:p-6 md:p-6;
+  }
+
+  .card-inner {
+    @apply rounded-[20px] p-6;
+  }
+
+  .eyebrow {
+    @apply uppercase tracking-[0.2em] text-[14px];
+  }
+
+  .section-title {
+    @apply font-bold text-[40px] leading-tight mt-2 sm:text-[30px] md:text-[30px];
+  }
+
+  .lead {
+    @apply text-[19px] leading-relaxed mt-6;
+  }
+
+  .btn {
+    @apply inline-block font-bold text-[18px] px-8 py-3 rounded-full ease-linear transition-all duration-150;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -11,7 +11,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between sm:flex-wrap md:flex-wrap">
         <a className="py-4" href="#hero">
-          <img className="w-64 sm:w-48 md:w-52" src="/logo.png" alt="Felipe Guellere Advocacia" />
+          <img className="w-64 sm:w-48 md:w-52" src="/logo.png" alt="Guellere Sociedade de Advogados" width="256" height="51" />
         </a>
 
         <button

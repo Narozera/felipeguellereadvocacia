@@ -4,62 +4,71 @@ import { textVariant } from "../utils/motion";
 
 export default function Hero() {
   return (
-    <section id="hero" className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-600 font-times px-6 py-24 sm:py-14 md:py-14">
+    <section id="hero" className="section relative isolate overflow-hidden bg-navy-900">
+      <img
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        src="/images/hero-biblioteca.jpg"
+        alt=""
+        aria-hidden="true"
+        width="1920"
+        height="1100"
+        fetchpriority="high"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-800/60" />
+      <div className="hidden sm:block md:block absolute inset-0 -z-10 bg-navy-900/60" />
+
       <motion.div
-        className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 sm:gap-10 md:gap-10 lg:gap-10"
+        className="section-grid items-center"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
       >
         <div className="text-white">
-          <motion.p
-            className="uppercase tracking-[0.2em] text-[14px] text-navy-200 mb-5"
-            variants={textVariant(0.2)}
-          >
+          <motion.p className="eyebrow text-navy-200" variants={textVariant(0.2)}>
             {hero.tag}
           </motion.p>
           <motion.h1
-            className="font-bold text-[48px] leading-[1.1] lg:text-[40px] md:text-[32px] sm:text-[28px]"
+            className="font-bold text-[48px] leading-[1.1] mt-2 lg:text-[40px] md:text-[32px] sm:text-[28px]"
             variants={textVariant(0.4)}
           >
             {hero.title}
           </motion.h1>
           <motion.p
-            className="text-[20px] leading-relaxed text-white/85 mt-6 max-w-[620px] sm:text-[18px] md:text-[18px]"
+            className="lead text-white/85 max-w-[620px]"
             variants={textVariant(0.6)}
           >
             {hero.text}
           </motion.p>
           <motion.div
-            className="flex flex-wrap gap-4 mt-10"
+            className="flex flex-wrap gap-6 mt-12"
             variants={textVariant(0.8)}
           >
             <a
               href={hero.buttonHref}
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-navy font-bold text-[18px] px-8 py-3 rounded-full hover:bg-navy-200 ease-linear transition-all duration-150"
+              className="btn bg-white text-navy hover:bg-navy-200"
             >
               {hero.button}
             </a>
             <a
               href={hero.secondaryHref}
-              className="border border-white/40 text-white text-[18px] px-8 py-3 rounded-full hover:bg-white/10 ease-linear transition-all duration-150"
+              className="btn font-normal border border-white/40 text-white hover:bg-white/10"
             >
               {hero.secondary}
             </a>
           </motion.div>
         </div>
 
-        <ul className="space-y-4">
+        <ul className="space-y-6">
           {hero.highlights.map((item, index) => (
             <motion.li
               key={item.id}
-              className="bg-white/10 backdrop-blur border border-white/15 rounded-[20px] p-6 text-white shadow-lg shadow-navy-900/40"
+              className="card-inner bg-white/10 backdrop-blur border border-white/15 text-white shadow-lg shadow-navy-900/40"
               variants={textVariant(0.6 + index * 0.2)}
             >
               <h2 className="font-bold text-[22px]">{item.title}</h2>
-              <p className="text-white/80 text-[17px] mt-1">{item.text}</p>
+              <p className="text-white/80 text-[17px] mt-2">{item.text}</p>
             </motion.li>
           ))}
         </ul>

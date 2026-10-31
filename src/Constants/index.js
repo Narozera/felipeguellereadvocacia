@@ -44,11 +44,6 @@ export const menu = [
   },
   {
     id: 3,
-    text: "Trajetória",
-    href: "#career",
-  },
-  {
-    id: 4,
     text: "Contato",
     href: "#contact",
   },
@@ -266,56 +261,6 @@ export const about = {
       title: "Bacharelado em Direito",
       place: "IBMEC SP",
       period: "2017 – 2021",
-    },
-  ],
-  skills: ["Redação jurídica", "Negociação", "Comunicação"],
-};
-
-export const career = {
-  tag: "Trajetória",
-  title: "Experiência profissional",
-  items: [
-    {
-      id: 1,
-      period: "2024 – atual",
-      role: "Sócio",
-      place: "Guellere Sociedade de Advogados",
-      text: "Atendimento direto a uma carteira diversificada de clientes. Atuação estratégica no Direito do Trabalho, com Reclamações e Defesas Trabalhistas, Compliance Trabalhista para empresas e auditoria preventiva. Consultoria nas áreas trabalhista, de família e cível.",
-    },
-    {
-      id: 2,
-      period: "2023 – 2026",
-      role: "Advogado",
-      place: "MFER Serviços Ltda.",
-      text: "Gestão de processos trabalhistas e adequação normativa preventiva. Suporte jurídico direto aos funcionários e ao CEO, participação em audiências, elaboração de contratos de trabalho e implantação do PAT e do controle de jornada.",
-    },
-    {
-      id: 3,
-      period: "2022 – 2023",
-      role: "Advogado Júnior",
-      place: "Lott Advocacia",
-      text: "Gerenciamento de carteira de aproximadamente 90 processos, controle de prazos, elaboração de peças processuais complexas, análise jurídica e contato com clientes.",
-    },
-    {
-      id: 4,
-      period: "2021 – 2022",
-      role: "Estagiário",
-      place: "Neto Cavalcante Sociedade de Advogados",
-      text: "Elaboração de peças processuais de alta complexidade, com atuação na área locatícia (Lei 8.245/91).",
-    },
-    {
-      id: 5,
-      period: "2020 – 2021",
-      role: "Estagiário",
-      place: "Tribunal de Justiça de São Paulo",
-      text: "Elaboração de minutas de sentenças de mérito e decisões interlocutórias em matérias gerais do Direito Civil.",
-    },
-    {
-      id: 6,
-      period: "2017 – 2020",
-      role: "Estagiário",
-      place: "Lott Advocacia · Araujo & Augusto Advogados",
-      text: "Processo Civil e Direito do Consumidor, diligências processuais e elaboração de peças de baixa e alta complexidade.",
     },
   ],
 };

@@ -4,68 +4,73 @@ import { textVariant } from "../utils/motion";
 
 export default function About() {
   return (
-    <section className="w-full bg-white font-times px-6 py-24 sm:py-16 md:py-16" id="about">
-      <motion.div
-        className="container mx-auto grid grid-cols-[1.4fr_1fr] gap-16 text-navy lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:gap-10 md:gap-10 sm:gap-10"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
-      >
-        <div>
-          <motion.p
-            className="uppercase tracking-[0.2em] text-[14px] text-navy-500"
-            variants={textVariant(0.2)}
-          >
+    <section className="section bg-white" id="about">
+      <div className="section-grid text-navy">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <motion.p className="eyebrow text-navy-500" variants={textVariant(0.2)}>
             {about.tag}
           </motion.p>
-          <motion.h2
-            className="font-bold text-[40px] mt-2 sm:text-[30px] md:text-[30px]"
-            variants={textVariant(0.3)}
-          >
+          <motion.h2 className="section-title" variants={textVariant(0.3)}>
             {about.name}
           </motion.h2>
           <motion.p
-            className="text-[20px] text-navy-500 italic"
+            className="text-[20px] text-navy-500 italic mt-2"
             variants={textVariant(0.3)}
           >
             {about.role}
           </motion.p>
 
-          <div className="space-y-5 mt-8">
-            {about.paragraphs.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                className="text-[19px] leading-relaxed text-navy-700"
-                variants={textVariant(0.4 + index * 0.1)}
-              >
-                {paragraph}
-              </motion.p>
-            ))}
-          </div>
+          {about.paragraphs.map((paragraph, index) => (
+            <motion.p
+              key={index}
+              className="lead text-navy-700"
+              variants={textVariant(0.4 + index * 0.1)}
+            >
+              {paragraph}
+            </motion.p>
+          ))}
 
           <motion.ul
-            className="grid grid-cols-3 gap-4 mt-10 sm:grid-cols-1"
+            className="grid grid-cols-3 gap-6 mt-12 sm:grid-cols-1"
             variants={textVariant(0.7)}
           >
             {about.stats.map((stat) => (
               <li
                 key={stat.id}
-                className="bg-navy-50 rounded-[20px] p-5 border border-navy-200 text-center"
+                className="card-inner bg-navy-50 border border-navy-200 text-center"
               >
                 <p className="font-bold text-[32px] text-navy">{stat.value}</p>
                 <p className="text-[16px] text-navy-500">{stat.label}</p>
               </li>
             ))}
           </motion.ul>
-        </div>
+        </motion.div>
 
-        <motion.aside
-          className="bg-gradient-to-br from-navy-800 to-navy-600 text-white rounded-[20px] p-8 space-y-8 self-start shadow-xl shadow-navy-300/40 sm:p-6 md:p-6"
-          variants={textVariant(0.5)}
+        <motion.div
+          className="relative isolate flex flex-col justify-end min-h-[560px] rounded-[20px] overflow-hidden shadow-xl shadow-navy-300/40"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <div>
-            <h3 className="font-bold text-[22px] mb-4">Formação acadêmica</h3>
-            <ul className="space-y-4">
+          <motion.img
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_20%]"
+            src="/images/justica.jpg"
+            alt="Estátua da Justiça segurando a balança"
+            width="800"
+            height="1000"
+            loading="lazy"
+            variants={textVariant(0.4)}
+          />
+          <motion.aside
+            className="card-inner m-6 bg-navy-800/90 backdrop-blur text-white"
+            variants={textVariant(0.5)}
+          >
+            <h3 className="font-bold text-[22px]">Formação acadêmica</h3>
+            <ul className="space-y-3 mt-6">
               {about.education.map((course) => (
                 <li key={course.id}>
                   <p className="font-bold text-[18px]">{course.title}</p>
@@ -75,23 +80,9 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-[22px] mb-4">Competências</h3>
-            <ul className="flex flex-wrap gap-2">
-              {about.skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="bg-white/10 border border-navy-300/50 rounded-full px-4 py-1 text-[16px]"
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.aside>
-      </motion.div>
+          </motion.aside>
+        </motion.div>
+      </div>
     </section>
   );
 }

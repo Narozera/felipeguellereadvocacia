@@ -23,7 +23,7 @@ export default function Modal({ area, onClose }) {
           onClick={(event) => event.stopPropagation()}
         >
           <motion.div
-            className="flex items-center justify-center gap-4 p-6 border-b border-white/20"
+            className="flex items-center justify-center gap-6 p-6 border-b border-white/20"
             variants={item}
           >
             <img className="h-[50px] w-[50px]" src={area.img} alt={area.alt} />
@@ -34,7 +34,7 @@ export default function Modal({ area, onClose }) {
 
           <motion.ul className="p-6 space-y-6" variants={item}>
             {area.items.map((entry) => (
-              <li key={entry.id} className="flex gap-5 items-start">
+              <li key={entry.id} className="flex gap-6 items-start">
                 <img
                   className="h-[40px] w-[40px] shrink-0 mt-1"
                   src={entry.icon}
@@ -54,7 +54,7 @@ export default function Modal({ area, onClose }) {
 
           <div className="p-6 border-t border-white/20">
             <button
-              className="w-full rounded-full bg-white text-navy font-bold uppercase py-3 hover:bg-navy-200 ease-linear transition-all duration-150"
+              className="btn w-full uppercase bg-white text-navy hover:bg-navy-200"
               type="button"
               onClick={onClose}
             >
